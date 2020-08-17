@@ -28,11 +28,11 @@ Things you may want to cover:
 | nickname | string | null: false |
 | email    | string | null: false |
 | password | string | null: false |
-|birthday  | date   | null: false |
-| family name | string | null: false |
+| birthday | date   | null: false |
+| family_name | string | null: false |
 | name     | string | null: false |
-| phonetic family name | string | null: false |
-| phonetic name | string | null: false |
+| phonetic_family name | string | null: false |
+| phonetic_name | string | null: false |
 
 ### Association
 has_many: items
@@ -72,9 +72,9 @@ has_many: items
 | building name    | string | null |
 | phone number     | string | null: false |
 ### Association
-has_one:transaction
+has_one:item_purchases
 
-## street address
+## item_purchases
 | Column | Type   | Options     |
 | --------| ------ | ----------- |
 | user     | references| null: false |
