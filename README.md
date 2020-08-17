@@ -46,10 +46,10 @@ has_many: comments
 | exhibitor_user      | string | null: false |
 | image               | string | null: false |
 | text                | text   | null: false |
-| commodity condition | string | null: false |
+| commodity_condition | string | null: false |
 | daytime             | datetime | null: false |
-| shipping origin     | string | null: false |
-| shipping charges    | integer | null: false |
+| shipping_origin     | string | null: false |
+| shipping_charges    | integer | null: false |
 
 ### Association
 has_many: users
@@ -66,11 +66,12 @@ has_many: items
 ## street address
 | Column | Type   | Options     |
 | --------| ------ | ----------- |
-| postal code      | string | null: false |
+| postal_code      | string | null: false |
+| prefectures | string | null: false |
 | city             | string | null: false |
 | address          | string | null: false |
-| building name    | string | null |
-| phone number     | string | null: false |
+| building_name    | string | null |
+| phone_number     | string | null: false |
 ### Association
 has_one:item_purchases
 
