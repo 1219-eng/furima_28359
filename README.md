@@ -28,8 +28,12 @@ Things you may want to cover:
 | name     | string | null: false |
 | email    | string | null: false |
 | password | string | null: false |
-| birthday | string | null: false |
-| card info| string | null: false |
+| date     | string | null: false |
+| commodity condition | string | null: false |
+| daytime | datetime | null: false |
+| shipping origin | string | null: false |
+| shipping charges | integer | null: false |
+
 
 ### Association
 has_many: items
@@ -38,30 +42,24 @@ has_many: comments
 ## item テーブル
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-|item name | string | null: false |
 |category  | string | null: false |
 |price     | integer| null: false |
 | exhibitor_user| string | null: false |
 | image    | string | null: false |
-| text     | string | null: false |
+| text     | text   | null: false |
 
 ### Association
-belongs_to: users
+has_many: users
 has_many: comments
 
 ## comments テーブル
-| text     | string | null: false |
-| user_id  | references| null: false |
-| item_id  | references| null: false |
+| text     | text      | null: false |
+| user     | references| null: false |
+| item     | references| null: false |
 
-belongs_to: users
-belongs_to: items
+has_many: users
+has_many: items
 
-## purchase テーブル
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| user_id  | references| null: false |
-| card info| string | null: false |
 
 ### Association
 has_one: street address
