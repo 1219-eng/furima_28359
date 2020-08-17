@@ -59,8 +59,6 @@ has_many: comments
 | Column | Type   | Options     |
 | --------| ------ | ----------- |
 | text     | text      | null: false |
-| user     | references| null: false |
-| item     | references| null: false |
 
 has_many: users
 has_many: items
@@ -68,16 +66,21 @@ has_many: items
 ## street address
 | Column | Type   | Options     |
 | --------| ------ | ----------- |
-| postal code      | integer| null: false |
-| prefectures      | string | null: false |
+| postal code      | string | null: false |
 | city             | string | null: false |
 | address          | string | null: false |
-| building name    | string | null: false |
-| phone number     | integer| null: false |
+| building name    | string | null |
+| phone number     | string | null: false |
 ### Association
 has_one:transaction
 
 ## street address
+| Column | Type   | Options     |
+| --------| ------ | ----------- |
+| user     | references| null: false |
+| item     | references| null: false |
 ### Association
 has_one:street address
+
+belongs_to_active_hash :prefectures
 
