@@ -37,6 +37,7 @@ Things you may want to cover:
 ### Association
 has_many: items
 has_many: comments
+has_one: item_purchases
 
 ## item テーブル
 | Column | Type   | Options     |
@@ -54,6 +55,7 @@ has_many: comments
 ### Association
 has_many: users
 has_many: comments
+has_one: item_purchases
 
 ## comments テーブル
 | Column | Type   | Options     |
@@ -73,7 +75,7 @@ has_many: items
 | building_name    | string | null |
 | phone_number     | string | null: false |
 ### Association
-has_one:item_purchases
+belongs_to:item_purchases
 
 ## item_purchases
 | Column | Type   | Options     |
