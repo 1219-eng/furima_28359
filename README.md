@@ -37,25 +37,25 @@ Things you may want to cover:
 ### Association
 has_many: items
 has_many: comments
-has_one: item_purchases
+has_many: item_purchases
 
 ## item テーブル
 | Column | Type   | Options     |
 | -------- | ------ | ----------- |
-|category             | string | null: false |
+|category_id          | integer | null: false |
 |price                | integer| null: false |
 | exhibitor_user      | string | null: false |
 | image               | string | null: false |
 | text                | text   | null: false |
-| commodity_condition | string | null: false |
-| daytime             | datetime | null: false |
-| shipping_origin     | string | null: false |
-| shipping_charges    | integer | null: false |
+| commodity_condition_id | integer | null: false |
+| daytime_id          | integer | null: false |
+| shipping_origin_id  | integer | null: false |
+| shipping_charges_id | integer | null: false |
 
 ### Association
 has_many: users
 has_many: comments
-has_one: item_purchases
+has_many: item_purchases
 
 ## comments テーブル
 | Column | Type   | Options     |
@@ -69,13 +69,13 @@ has_many: items
 | Column | Type   | Options     |
 | --------| ------ | ----------- |
 | postal_code      | string | null: false |
-| prefectures | string | null: false |
+| prefectures_id   | integer | null: false |
 | city             | string | null: false |
 | address          | string | null: false |
 | building_name    | string | null |
 | phone_number     | string | null: false |
 ### Association
-belongs_to:item_purchases
+has_many:item_purchases
 
 ## item_purchases
 | Column | Type   | Options     |
@@ -85,5 +85,5 @@ belongs_to:item_purchases
 ### Association
 has_one:street address
 
-belongs_to_active_hash :prefectures
+
 
