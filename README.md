@@ -51,12 +51,12 @@ has_many: item_purchases
 | item                | string  | null: false |
 |category_id          | integer | null: false |
 |price                | integer| null: false |
-| user_id             | references | null: false |
+| user                | references | null: false, foreign_key: true |
 
 ### Association
 belongs_to: user
-has_one: comments
-has_one: item_purchases
+has_one: comment
+has_one: item_purchase
 
 ## comments テーブル
 | Column | Type   | Options     |
@@ -75,18 +75,18 @@ belongs_to: items
 | address          | string | null: false |
 | building_name    | string |             |
 | phone_number     | string | null: false |
-| item_purchase | references | null: false |
+| item_purchase | references | null: false, foreign_key: true|
 
 ### Association
-belongs_to:item_purchases
+belongs_to:item_purchase
 
 ## item_purchases
 | Column | Type   | Options     |
 | --------| ------ | ----------- |
-| user     | references| null: false |
-| item     | references| null: false |
+| user     | references| null: false, foreign_key: true|
+| item     | references| null: false, foreign_key: true|
 ### Association
-has_one:street address
+has_one:street_address
 belongs_to:user
 belongs_to:item
 
