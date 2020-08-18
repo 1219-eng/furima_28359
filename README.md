@@ -31,8 +31,11 @@ Things you may want to cover:
 | birthday | date   | null: false |
 | family_name | string | null: false |
 | name     | string | null: false |
-| phonetic_family name | string | null: false |
+| phonetic_family_name | string | null: false |
 | phonetic_name | string | null: false |
+|category_id          | integer | null: false |
+|price                | integer| null: false |
+| exhibitor_user      | string | null: false |
 
 ### Association
 has_many: items
@@ -42,20 +45,18 @@ has_many: item_purchases
 ## item テーブル
 | Column | Type   | Options     |
 | -------- | ------ | ----------- |
-|category_id          | integer | null: false |
-|price                | integer| null: false |
-| exhibitor_user      | string | null: false |
 | image               | string | null: false |
 | text                | text   | null: false |
 | commodity_condition_id | integer | null: false |
 | daytime_id          | integer | null: false |
 | shipping_origin_id  | integer | null: false |
 | shipping_charges_id | integer | null: false |
+| item_name           | text    | null: false |
 
 ### Association
-has_many: users
-has_many: comments
-has_many: item_purchases
+belongs_to: user
+has_one: comments
+has_one: item_purchases
 
 ## comments テーブル
 | Column | Type   | Options     |
@@ -72,10 +73,10 @@ has_many: items
 | prefectures_id   | integer | null: false |
 | city             | string | null: false |
 | address          | string | null: false |
-| building_name    | string | null |
-| phone_number     | string | null: false |
+| building_name    | references | null |
+| phone_number     | references | null: false |
 ### Association
-has_many:item_purchases
+belongs_to:item_purchases
 
 ## item_purchases
 | Column | Type   | Options     |
@@ -84,6 +85,7 @@ has_many:item_purchases
 | item     | references| null: false |
 ### Association
 has_one:street address
-
+belongs_to:user
+belongs_to:item
 
 
