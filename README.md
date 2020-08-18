@@ -48,11 +48,10 @@ has_many: item_purchases
 | daytime_id          | integer | null: false |
 | shipping_origin_id  | integer | null: false |
 | shipping_charges_id | integer | null: false |
-| item_name           | text    | null: false |
+| item                | string  | null: false |
 |category_id          | integer | null: false |
 |price                | integer| null: false |
-| exhibitor_user      | string | null: false |
-| user                | references | null: false |
+| user_id             | references | null: false |
 
 ### Association
 belongs_to: user
@@ -64,17 +63,17 @@ has_one: item_purchases
 | --------| ------ | ----------- |
 | text     | text      | null: false |
 
-has_many: users
-has_many: items
+belongs_to: users
+belongs_to: items
 
-## street address
+## street_address
 | Column | Type   | Options     |
 | --------| ------ | ----------- |
 | postal_code      | string | null: false |
 | prefectures_id   | integer | null: false |
 | city             | string | null: false |
 | address          | string | null: false |
-| building_name    | string | null |
+| building_name    | string |             |
 | phone_number     | string | null: false |
 | item_purchase | references | null: false |
 
