@@ -33,9 +33,6 @@ Things you may want to cover:
 | name     | string | null: false |
 | phonetic_family_name | string | null: false |
 | phonetic_name | string | null: false |
-|category_id          | integer | null: false |
-|price                | integer| null: false |
-| exhibitor_user      | string | null: false |
 
 ### Association
 has_many: items
@@ -52,6 +49,10 @@ has_many: item_purchases
 | shipping_origin_id  | integer | null: false |
 | shipping_charges_id | integer | null: false |
 | item_name           | text    | null: false |
+|category_id          | integer | null: false |
+|price                | integer| null: false |
+| exhibitor_user      | string | null: false |
+| user                | references | null: false |
 
 ### Association
 belongs_to: user
@@ -73,8 +74,10 @@ has_many: items
 | prefectures_id   | integer | null: false |
 | city             | string | null: false |
 | address          | string | null: false |
-| building_name    | references | null |
-| phone_number     | references | null: false |
+| building_name    | string | null |
+| phone_number     | string | null: false |
+| item_purchase | references | null: false |
+
 ### Association
 belongs_to:item_purchases
 
