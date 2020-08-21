@@ -60,4 +60,7 @@ group :production do
   gem 'rails_12factor'
 end
 
-gem 'active_hash'
+gem 'devise'
+gem 'factory_bot_rails'
+gem 'rspec-rails', '~> 4.0.0'
+
