@@ -1,9 +1,10 @@
+require 'rails_helper'
 RSpec.describe User, type: :model do
   describe 'ユーザー情報の記述' do
     it "nicknameが必要であること" do
       user = FactoryBot.build(:user)
       user.nickname = ""
-      user.valid?
+      user.valid
     end
     it "メールアドレスが必須であること" do
       user = FactoryBot.build(:user)
@@ -77,5 +78,6 @@ RSpec.describe User, type: :model do
       user = FactoryBot.build(:user)
       user.birthday = ""
       user.valid?
+    end
   end
 end
